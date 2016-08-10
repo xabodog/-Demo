@@ -7,11 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "People.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        People *people = [People PeopleWithSex:PeopleSexWoman];
+        [people doSomething];
+        
+        if ([people isMemberOfClass:[People class]]) {
+            NSLog(@"is someclass");
+        }
+        if ([people isKindOfClass:[People class]]) {
+            NSLog(@"is someclass or childclass");
+        }
     }
     return 0;
 }
